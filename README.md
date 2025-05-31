@@ -5,6 +5,7 @@ repo for lab exp i've done at polimi in 2025
 # 🩺 6-Minute Walk Test Dashboard – Indoor Wearable Tracking System
 
 Questo progetto consente di tracciare in tempo reale la distanza percorsa da un paziente indossando un wearable BLE e visualizzarla su una dashboard interattiva. È pensato per essere usato in ambienti ospedalieri indoor come test dei 6 minuti (6MWT).
+Riassumendo: se il paziente non riesce a fare più di 350 metri in 6 minuti, camminando ha alta probabilità di avere malattie circolatorie e un'indagine più approfondita è necessaria. 
 
 ## 📌 Requisiti
 
@@ -26,6 +27,7 @@ Puoi installare le dipendenze con:
 ```bash
 pip install dash plotly pandas numpy
 ```
+Note: ricorda di controllare/modificare le coordinate delle ancore se necessario in entrambi i programmi
 
 ---
 
@@ -57,7 +59,7 @@ Dopo qualche secondo, la dashboard sarà disponibile all’indirizzo:
 
 ## 🧪 Procedura per iniziare un test
 
-1. Inserisci i **dati del paziente** nei campi in alto (nome, età, altezza, genere).
+1. Inserisci i **dati del paziente** nei campi in alto (nome, età, altezza, genere). (l'unità singola del passo viene calcolata in base a questi dati)
 2. Clicca su **"Confirm Patient Data"**:
    - Verrà creato un file `info.json` con i dati del paziente nella nuova cartella.
    - Il sistema è pronto per iniziare a ricevere dati.
@@ -67,7 +69,7 @@ Dopo qualche secondo, la dashboard sarà disponibile all’indirizzo:
    - ⚠️ Potrebbe esserci un piccolo **ritardo (latenza)** nella visualizzazione dei dati, dovuto sia all’hardware (CPU) sia alla scrittura/lettura dal file.
 
 4. Clicca su **"Start Timer"**:
-   - Inizia la sessione ufficiale da **6 minuti**.
+   - Si può iniziare la sessione/esperimento da **6 minuti**. Il pazienta cammina lungo un percorso per 6 minuti
    - Il timer viene mostrato in alto con indicazione del tempo trascorso e residuo.
 
 ---
@@ -78,8 +80,9 @@ Dopo qualche secondo, la dashboard sarà disponibile all’indirizzo:
 - Tracciamento delle **distanze** stimate con:
   - Calcolo dai passi (pedometria)
   - Calcolo dalla posizione (trilaterazione BLE)
-  - Distanza "fusa" (fusione delle due precedenti).
+  - Distanza "fusa" (fusione delle due precedenti). (Consiglio di dare poco peso alla distanza calcolata dalla posizione, è molto inaccurata)
 - Grafici di **RSSI**, **qualità del segnale**, **heatmap**, **stabilità della posizione**, **velocità** e **attività** (in movimento o fermo).
+- Le tab più interessanti e utili sono la prima e l'ultima sulla distanza cumulativa
 
 ---
 
@@ -97,11 +100,7 @@ I dati salvati vengono archiviati in cartelle `positions_data_<id>_<timestamp>`.
 
 ---
 
-## 🧑‍💻 Autori
-
-- Pietro Guidetti  
-- Minglei Shao  
-- Alice, Ameni, IO  
+Pietro Guidetti  
 *IoMT 2025 | LABEXP – Indoor Health Monitoring*
 
 ---
