@@ -10,7 +10,7 @@ Riassumendo: se il paziente non riesce a fare più di 350 metri in 6 minuti, cam
 ## 📌 Requisiti
 
 - Sistema operativo: **Windows**
-- IDE consigliato: **PyCharm**
+- IDE consigliato: **PyCharm** (io uso questo, ma può andar bene uno qualsiasi)
 - Python ≥ 3.8
 - Librerie necessarie:
   - `dash`
