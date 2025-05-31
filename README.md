@@ -33,8 +33,15 @@ Note: ricorda di controllare/modificare le coordinate delle ancore se necessario
 
 ## 🚀 Come avviare il progetto
 
-### 1. **Avvio del backend (server ricezione dati BLE)**
-Apri PyCharm e avvia lo script:
+### **Avvio della dashboard (frontend)**
+In PyCharm, avvia lo script:
+```
+v7_wearable_dashboard_visualization-program_multiPatient.py
+```
+Questo dovrebbe automaticamente avviare anche il backend,
+
+### Backend ovvero (server ricezione dati BLE)**
+Contenuto nello script:
 ```
 enhanced-distance-tracking_v3_jsonPatient.py
 ```
@@ -45,13 +52,7 @@ Questo script:
   - `info.json` con i dati del paziente.
   - `wearable_data.csv` con tutti i dati raccolti (RSSI, distanza stimata, passi, posizione, ecc.).
 
-### 2. **Avvio della dashboard (frontend)**
-Sempre in PyCharm, avvia lo script:
-```
-v7_wearable_dashboard_visualization-program_multiPatient.py
-```
-
-Dopo qualche secondo, la dashboard sarà disponibile all’indirizzo:
+Dopo qualche secondo dall'avvio, la dashboard sarà disponibile all’indirizzo:
 
 📍 [http://localhost:8050](http://localhost:8050)
 
@@ -97,6 +98,8 @@ Dopo qualche secondo, la dashboard sarà disponibile all’indirizzo:
 ## 🧹 Pulizia dei dati
 
 I dati salvati vengono archiviati in cartelle `positions_data_<id>_<timestamp>`. Puoi fare il backup o cancellarli a mano dopo ogni test.
+Oppure portare su matlab i csv per visualizzare a test finito i risultati.
+Anche il programma matlab usato da me finora è nella cartella. 
 
 ---
 
